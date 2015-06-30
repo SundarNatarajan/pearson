@@ -1,0 +1,10 @@
+CASE accessing POST Api to create a record
+	WHEN having the email,password, username in POST body
+	THEN upsert the details
+	
+	WHEN email validation fails
+	THEN dont save the record
+
+CASE retrieving the user details
+	WHEN calling the GET api
+	THEN gives all the username of the saved profiles
