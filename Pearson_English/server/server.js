@@ -33,6 +33,7 @@ app.configure(function () {
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 });
 
+
 /*
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "http://172.16.1.175:7790");
@@ -66,18 +67,6 @@ OpenMongo();
 
 
 // END: mongodb stuff
-
-
-// Config
-
-app.configure(function () {
-    app.use(express.bodyParser());
-    app.use(express.bodyParser({uploadDir: 'public'}));
-    app.use(express.methodOverride());
-    app.use(app.router);
-    app.use(express.static(path.join(application_root, "public")));
-    app.use(express.errorHandler({dumpExceptions: true, showStack: true}));
-});
 
 //BEGIN REST API
 app.post('/api/addentry', function (req, res) {
